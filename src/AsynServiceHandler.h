@@ -16,8 +16,8 @@ class AsynServerHandler : public ACE_Service_Handler
         }
         virtual void open(ACE_HANDLE new_handle, ACE_Message_Block& message_block);
     protected:
-        void handle_read_stream(const ACE_Asynch_Read_Stream::Result &result);
-        void handle_write_stream(const ACE_Asynch_Write_Stream::Result &result);
+        virtual void handle_read_stream(const ACE_Asynch_Read_Stream::Result &result);
+        virtual void handle_write_stream(const ACE_Asynch_Write_Stream::Result &result);
     private:
         ACE_Asynch_Write_Stream write_;
         ACE_Asynch_Read_Stream read_;
